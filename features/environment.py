@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.events import EventFiringWebDriver
 
 from app.application import Application
-from support.logger import logger, MyListener
+# from support.logger import logger, MyListener
 
 # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
 bs_user = ''
