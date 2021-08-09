@@ -5,12 +5,10 @@ from selenium.common.exceptions import TimeoutException
 
 
 # this Base class is serving basic attributes for every single page inherited from Page class
-class BasePage(object):
-    class BasePage(object):
-        def __init__(self, driver, base_url='https://gettop.us/'):
-            self.base_url = base_url
+class BasePage:
+    class BasePage:
+        def __init__(self, driver):
             self.driver = driver
-            self.timeout = 30
 
         def find_element(self, *locator):
             return self.driver.find_element(*locator)
@@ -24,7 +22,6 @@ class BasePage(object):
             e.send_keys(text)
 
         def open(self, url):
-            url = self.base_url + url
             self.driver.get(url)
 
         def get_title(self):
