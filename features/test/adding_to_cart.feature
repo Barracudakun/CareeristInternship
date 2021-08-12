@@ -11,7 +11,8 @@ Feature: Adding to cart
 
   Scenario: User can click - and + to modify amount of items to add to cart, upon adding to cart, correct amount of items shown
   in the cart
-    And Click on '+' and '-'
+    And Click on '+'
+    And Click on ADD TO CART
     Then Verify correct amount of items shown in the cart
 
 

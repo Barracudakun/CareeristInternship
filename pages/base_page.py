@@ -21,7 +21,7 @@ class BasePage:
         e.send_keys(text)
 
     def get_text(self, *locator):
-        return self.find_element(locator).text
+        return self.find_element(*locator).text
 
     def open_url(self, url):
         self.driver.get(url)
