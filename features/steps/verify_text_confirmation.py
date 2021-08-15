@@ -4,7 +4,7 @@ from time import sleep
 
 firstItem = (By.CSS_SELECTOR, '.product-title a')
 ADD_TO_CART = (By.CSS_SELECTOR, '.cart button')
-SelectedProduct = (By.CSS_SELECTOR, '.product-title')
+# SelectedProduct = (By.CSS_SELECTOR, '.product-title')
 
 
 @given('Open Gettop page')
@@ -27,9 +27,12 @@ def click_on_ADD_TO_CART(context):
     context.app.main_page.find_element(*ADD_TO_CART).click()
     sleep(3)
 
-@then('Verify "{selected_item} have been added to your cart" confirmation upon adding items to cart')
-def verify_add_product_to_cart(context, selected_item):
-    selected_item = context.app.main_page.get_text(*SelectedProduct)
+@then('Verify “MacBook Pro 13-inch” has been added to your cart." confirmation upon adding items to cart')
+def verify_add_product_to_cart(context):
+    # selected_item = context.app.main_page.get_text(*SelectedProduct)
     actual_text = context.app.main_page.find_element(By.CSS_SELECTOR, '.message-container').text
-    assert actual_text != '"{selected_item}" has been added to your cart', f'Expected "{selected_item} has been added to your cart", but got {actual_text}'
+    # actual_text = actual_text.replace('"', '')
+    # actual_text = actual_text[:actual_text.find("has")]
+    #assert actual_text == "{selected_item} has been added to your cart", f'Expected "{selected_item} has been added to your cart", but got {actual_text}'
+    assert actual_text == '“MacBook Pro 13-inch” has been added to your cart.', f'Expected text, but got {actual_text}'
     sleep(3)
