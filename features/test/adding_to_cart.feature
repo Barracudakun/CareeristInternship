@@ -30,3 +30,8 @@ Feature: Adding to cart
     Given Open Given page
     Then Verify User can click through multiple products by clicking back and forward arrows
 
+
+  Scenario: If product is out of stock, user sees "Out of Stock", Add to Cart and Checkout buttons are not shown
+#    (https://gettop.us/product/land-tee-jack-jones/)
+    Given Open out of stock page
+    Then Verify User can sees 'Out of Stock', Add to Cart and Checkout buttons are not shown
